@@ -6,6 +6,8 @@ This project is dedicated to exploring the Simple DirectMedia Layer (SDL) librar
 
 SDL (Simple DirectMedia Layer) is a low-level hardware abstraction library that provides access to graphics, audio, input devices, and more. This repository contains a collection of tutorials, examples, and experiments aimed at helping developers learn and master SDL.
 
+The default-hello-world app is built in C using SDL callbacks while the other apps are built in C++ using object oriented approach.
+
 ## Installation
 
 ### Clone SDL source
