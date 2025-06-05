@@ -11,6 +11,8 @@ add_subdirectory(vendored/SDL EXCLUDE_FROM_ALL)
 
 # Create your game executable target as usual
 add_executable(default-hello-world WIN32 src/default-hello-world/main.c)
+add_executable(hello-world WIN32 src/hello-world/main.cpp src/hello-world/GameManager.cpp)
 
 # Link to the actual SDL3 library.
 target_link_libraries(default-hello-world PRIVATE SDL3::SDL3)
+target_link_libraries(hello-world PRIVATE SDL3::SDL3)

@@ -13,6 +13,7 @@ private:
 public:
   GameManager();
   ~GameManager();
+
   int run();
   void cleanup();
 };
