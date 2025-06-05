@@ -9,13 +9,14 @@ private:
   SDL_Window *window;
   SDL_Renderer *renderer;
   bool running;
+  bool initialize();
+  void cleanup();
 
 public:
   GameManager();
   ~GameManager();
 
   int run();
-  void cleanup();
 };
 
 #endif // GAME_MANAGER_H
