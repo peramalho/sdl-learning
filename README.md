@@ -23,8 +23,4 @@ cmake --build build
 
 ## Running
 
-Run
-
-```
-./build/app
-```
+Executables are available in the build directory
