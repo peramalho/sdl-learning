@@ -23,6 +23,15 @@ bool GameManager::initialize() {
   return true;
 }
 
+void GameManager::handleEvents() {
+  SDL_Event event;
+  while (SDL_PollEvent(&event)) {
+    if (event.type == SDL_EVENT_KEY_DOWN || event.type == SDL_EVENT_QUIT) {
+      running = false;
+    }
+  }
+}
+
 void GameManager::render() {
   const char *message{"Hello World!"};
   int w{0}, h{0};
@@ -44,7 +53,16 @@ void GameManager::render() {
   SDL_RenderPresent(renderer);
 }
 
-void GameManager::cleanup() {}
+void GameManager::cleanup() {
+  if (renderer) {
+    SDL_DestroyRenderer(renderer);
+    renderer = nullptr;
+  }
+  if (window) {
+    SDL_DestroyWindow(window);
+    window = nullptr;
+  }
+}
 
 int GameManager::run() {
   if (!initialize()) {
@@ -52,8 +70,8 @@ int GameManager::run() {
   }
 
   while (running) {
+    handleEvents();
     render();
-
     SDL_Delay(16); // 60 FPS
   }
 
