@@ -10,6 +10,7 @@ private:
   SDL_Renderer *renderer;
   bool running;
   bool initialize();
+  void render();
   void cleanup();
 
 public:
