@@ -32,6 +32,10 @@ void GameManager::handleEvents() {
   }
 }
 
+void GameManager::update() {
+  // Game logic will go here
+}
+
 void GameManager::render() {
   const char *message{"Hello World!"};
   int w{0}, h{0};
@@ -72,6 +76,7 @@ int GameManager::run() {
 
   while (running) {
     handleEvents();
+    update();
     render();
     SDL_Delay(16); // 60 FPS
   }

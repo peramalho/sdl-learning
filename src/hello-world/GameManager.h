@@ -11,6 +11,7 @@ private:
   bool running;
   bool initialize();
   void handleEvents();
+  void update();
   void render();
   void cleanup();
 
