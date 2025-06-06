@@ -1,6 +1,11 @@
 #include "GameManager.h"
 #include <SDL3/SDL.h>
 
+constexpr int WINDOW_WIDTH = 800;
+constexpr int WINDOW_HEIGHT = 600;
+constexpr int TARGET_FPS = 60;
+constexpr int FRAME_DELAY_MS = 1000 / TARGET_FPS;
+
 GameManager::GameManager()
     : window(nullptr), renderer(nullptr), running(false) {}
 
@@ -13,7 +18,7 @@ bool GameManager::initialize() {
     return false;
   }
 
-  if (!SDL_CreateWindowAndRenderer("Hello World", 800, 600,
+  if (!SDL_CreateWindowAndRenderer("Hello World", WINDOW_WIDTH, WINDOW_HEIGHT,
                                    SDL_WINDOW_FULLSCREEN, &window, &renderer)) {
     SDL_Log("Couldn't create window and renderer: %s", SDL_GetError());
     return false;
@@ -78,7 +83,7 @@ int GameManager::run() {
     handleEvents();
     update();
     render();
-    SDL_Delay(16); // 60 FPS
+    SDL_Delay(FRAME_DELAY_MS);
   }
 
   return 0;
