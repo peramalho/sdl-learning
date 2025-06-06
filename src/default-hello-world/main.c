@@ -2,11 +2,17 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 
+#define APP_NAME "Hello World"
+#define APP_VERSION "1.0.0"
+#define APP_IDENTIFIER "com.default - hello - world"
+
 static SDL_Window *window = NULL;
 static SDL_Renderer *renderer = NULL;
 
 /* This function runs once at startup. */
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[]) {
+  SDL_SetAppMetadata(APP_NAME, APP_VERSION, APP_IDENTIFIER);
+
   /* Create the window */
   if (!SDL_CreateWindowAndRenderer("Hello World", 800, 600,
                                    SDL_WINDOW_FULLSCREEN, &window, &renderer)) {

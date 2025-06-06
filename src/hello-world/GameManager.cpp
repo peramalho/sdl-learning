@@ -1,10 +1,13 @@
 #include "GameManager.h"
 #include <SDL3/SDL.h>
 
-constexpr int WINDOW_WIDTH = 800;
-constexpr int WINDOW_HEIGHT = 600;
-constexpr int TARGET_FPS = 60;
-constexpr int FRAME_DELAY_MS = 1000 / TARGET_FPS;
+constexpr const char *APP_NAME{"Hello World"};
+constexpr const char *APP_VERSION{"1.0.0"};
+constexpr const char *APP_IDENTIFIER{"com.hello-world"};
+constexpr int WINDOW_WIDTH{800};
+constexpr int WINDOW_HEIGHT{600};
+constexpr int TARGET_FPS{60};
+constexpr int FRAME_DELAY_MS{1000 / TARGET_FPS};
 
 GameManager::GameManager()
     : window(nullptr), renderer(nullptr), running(false) {}
@@ -12,13 +15,15 @@ GameManager::GameManager()
 GameManager::~GameManager() { cleanup(); }
 
 bool GameManager::initialize() {
+  SDL_SetAppMetadata(APP_NAME, APP_VERSION, APP_IDENTIFIER);
+
   // Initialize SDL
-  if (SDL_Init(SDL_INIT_VIDEO) < 0) {
+  if (!SDL_Init(SDL_INIT_VIDEO)) {
     SDL_Log("SDL could not initialize! SDL_Error: %s", SDL_GetError());
     return false;
   }
 
-  if (!SDL_CreateWindowAndRenderer("Hello World", WINDOW_WIDTH, WINDOW_HEIGHT,
+  if (!SDL_CreateWindowAndRenderer(APP_NAME, WINDOW_WIDTH, WINDOW_HEIGHT,
                                    SDL_WINDOW_FULLSCREEN, &window, &renderer)) {
     SDL_Log("Couldn't create window and renderer: %s", SDL_GetError());
     return false;
