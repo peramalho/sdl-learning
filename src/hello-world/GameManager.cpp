@@ -62,6 +62,7 @@ void GameManager::cleanup() {
     SDL_DestroyWindow(window);
     window = nullptr;
   }
+  SDL_Quit();
 }
 
 int GameManager::run() {
