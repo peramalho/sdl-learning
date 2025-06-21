@@ -10,6 +10,7 @@ constexpr int WINDOW_WIDTH{800};
 constexpr int WINDOW_HEIGHT{600};
 constexpr int TARGET_FPS{60};
 constexpr int FRAME_DELAY_MS{1000 / TARGET_FPS};
+constexpr int FRAME_DELAY_S{FRAME_DELAY_MS / 1000};
 
 constexpr int NUM_POINTS{500};
 constexpr int MIN_PIXELS_PER_SECOND{

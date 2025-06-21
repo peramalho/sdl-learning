@@ -47,7 +47,7 @@ void GameManager::handleEvents() {
 void GameManager::update() {
   int i;
   for (i = 0; i < SDL_arraysize(points); i++) {
-    const float distance = FRAME_DELAY_MS * point_speeds[i];
+    const float distance = FRAME_DELAY_S * point_speeds[i];
     // move all points for a new frame
     points[i].x += distance;
     points[i].y += distance;
