@@ -52,7 +52,7 @@ void GameManager::update() {
     points[i].x += distance;
     points[i].y += distance;
     if ((points[i].x >= WINDOW_WIDTH) || (points[i].y >= WINDOW_HEIGHT)) {
-      /* off the screen; restart it elsewhere! */
+      // reset point at a when off the screen
       if (SDL_rand(2)) {
         points[i].x = SDL_randf() * ((float)WINDOW_WIDTH);
         points[i].y = 0.0f;
