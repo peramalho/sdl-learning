@@ -1,5 +1,6 @@
 #include "GameManager.h"
 #include <SDL3/SDL.h>
+#include <iostream>
 
 GameManager::GameManager()
     : window(nullptr), renderer(nullptr), running(false) {}
