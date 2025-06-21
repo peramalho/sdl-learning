@@ -17,8 +17,8 @@ bool GameManager::initialize() {
     return false;
   }
 
-  if (!SDL_CreateWindowAndRenderer(APP_NAME, WINDOW_WIDTH, WINDOW_HEIGHT,
-                                   SDL_WINDOW_FULLSCREEN, &window, &renderer)) {
+  if (!SDL_CreateWindowAndRenderer(APP_NAME, WINDOW_WIDTH, WINDOW_HEIGHT, 0,
+                                   &window, &renderer)) {
     SDL_Log("Couldn't create window and renderer: %s", SDL_GetError());
     return false;
   }
