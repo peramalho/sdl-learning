@@ -24,6 +24,25 @@ bool GameManager::initialize() {
     return false;
   }
 
+  rectangle1.x = 0;
+  rectangle1.y = 0;
+  rectangle1.w = 10;
+  rectangle1.h = 50;
+
+  rectangle2.x = 50;
+  rectangle2.y = 100;
+  rectangle2.w = 100;
+  rectangle2.h = 200;
+
+  SDL_RenderClear(renderer);
+  SDL_SetRenderDrawColor(renderer, 255, 0, 0, SDL_ALPHA_OPAQUE);
+  SDL_RenderRect(renderer, &rectangle1);
+
+  SDL_SetRenderDrawColor(renderer, 0, 255, 0, SDL_ALPHA_OPAQUE);
+  SDL_RenderFillRect(renderer, &rectangle2);
+
+  SDL_RenderPresent(renderer); /* put it all on the screen! */
+
   running = true;
   return true;
 }
@@ -39,20 +58,7 @@ void GameManager::handleEvents() {
 
 void GameManager::update() {}
 
-void GameManager::render() {
-  int w{0}, h{0};
-  float x, y;
-  const float scale{4.0f};
-
-  // Center the message and scale it up
-  SDL_GetRenderOutputSize(renderer, &w, &h);
-
-  // Draw the message
-  SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-  SDL_RenderClear(renderer);
-  SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-  SDL_RenderPresent(renderer);
-}
+void GameManager::render() {}
 
 void GameManager::cleanup() {
   if (renderer) {

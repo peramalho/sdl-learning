@@ -23,8 +23,7 @@ private:
   SDL_Window *window;
   SDL_Renderer *renderer;
   bool running;
-  SDL_FPoint points[NUM_POINTS];
-  float point_speeds[NUM_POINTS];
+  SDL_FRect rectangle1, rectangle2;
 
   bool initialize();
   void handleEvents();
