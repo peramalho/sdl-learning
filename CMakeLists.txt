@@ -14,9 +14,11 @@ add_executable(default-hello-world src/default-hello-world/main.c)
 add_executable(hello-world src/hello-world/main.cpp src/hello-world/GameManager.cpp)
 add_executable(clear src/clear/main.cpp src/clear/GameManager.cpp)
 add_executable(points src/points/main.cpp src/points/GameManager.cpp)
+add_executable(rectangles src/rectangles/main.cpp src/rectangles/GameManager.cpp)
 
 # Link to the actual SDL3 library.
 target_link_libraries(default-hello-world PRIVATE SDL3::SDL3)
 target_link_libraries(hello-world PRIVATE SDL3::SDL3)
 target_link_libraries(clear PRIVATE SDL3::SDL3)
 target_link_libraries(points PRIVATE SDL3::SDL3)
+target_link_libraries(rectangles PRIVATE SDL3::SDL3)
