@@ -73,10 +73,6 @@ void GameManager::render() {
   float x, y;
   const float scale{4.0f};
 
-  // Center the message and scale it up
-  SDL_GetRenderOutputSize(renderer, &w, &h);
-
-  // Draw the message
   SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
   SDL_RenderClear(renderer);
   SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
